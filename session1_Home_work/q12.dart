@@ -4,6 +4,7 @@ void main ()
 {
   double pi = 3.14; 
   String Welcome = 'hello';
-  bool isGoodToDy = true ; 
+  bool isGoodToDy = true ;
+  int shoeSize = 42; 
 
 }

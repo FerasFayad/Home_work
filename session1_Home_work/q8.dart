@@ -1,6 +1,9 @@
 /*Question 8
 What is the difference between the num and double data types in Dart? */
-num num1= 2;
-num num2 = 3.2;
+void main (){
+num num1= 2; // num can hold an int
+num num2 = 3.2; // num can hold a double
+}
+
 // num :  is a general numeric type in Dart It can hold both integers (int) and floating-point numbers (double).
-// [double]: A double-precision floating point number
+// [double]: A double-precision floating point number.
