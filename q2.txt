@@ -1,0 +1,5 @@
+Question 2
+Explain the purpose of the main function in a Dart application.
+
+Solution 
+ The main function is the entry point of the dart application where the execution of the program starts
