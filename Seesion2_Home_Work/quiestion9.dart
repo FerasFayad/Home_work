@@ -10,7 +10,7 @@ void main (){
   print(students[1]['grade']);
 
   //average = (sum of values ) / numbers of values
-  double average = (students[0]['grade']! + students[1]['grade']!) / students.length; 
+  double average = (students[0]['grade'] + students[1]['grade']) / students.length; 
   print(average);
 
  
