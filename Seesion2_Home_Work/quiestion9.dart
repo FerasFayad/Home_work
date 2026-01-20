@@ -7,7 +7,7 @@ void main (){
     {'name' : 'Feras','grade' :9.5} ,
     {'name':'Khled' ,'grade': 8.0}  ,
     ];
-  print(students[1]['Khled']);
+  print(students[1]['grade']);
 
   //average = (sum of values ) / numbers of values
   double average = (students[0]['grade']! + students[1]['grade']!) / students.length; 
