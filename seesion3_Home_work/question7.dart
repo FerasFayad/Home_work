@@ -5,24 +5,29 @@ Handle each case with appropriate output, including maps and null safety where n
  */
 
 
-
-import 'dart:ffi';
-
-void main(){
-Map<String, String> routes = {
+void main() {
+  Map<String, String> routes = {
     '/': 'Home Page',
     '/products': 'Products Page',
     '/profile': 'Profile Page',
-  }; 
-   String? currentPath = routes['/profile'];
+  };
+
+  String? currentPath = '/profile';
+
   switch (currentPath) {
-     case 'Home Page' : print('current path is${routes['/']}');
+    case '/':
+      print(routes['/'] ?? 'Route not found');
       break;
-     case  'Products Page':  print('current path is a${routes['products']}');
+
+    case '/products':
+      print(routes['/products'] ?? 'Route not found');
       break;
-      case 'other' : print('current path is a${routes['profile']}');
+
+    case '/profile':
+      print(routes['/profile'] ?? 'Route not found');
       break;
-      default : print('try agin ${routes.keys}');
+
+    default:
+      print('404 - Route not found');
   }
-  
 }
