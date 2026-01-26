@@ -7,6 +7,7 @@ Print the value for 'EG', add a new entry 'QA': 'Qatar', print the total length,
   Map<String , String> countryCodes = {'EG':'Egypt', 'PS':'Palestine'};
   print(countryCodes['EG']);
   countryCodes['QA'] = 'Qatar';
+  countryCodes.entries.map((e) => print(e)).toList();
   print(countryCodes.length);
   if (!countryCodes.containsKey('JO')){
 

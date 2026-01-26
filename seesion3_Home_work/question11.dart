@@ -8,8 +8,8 @@ Write a Dart program that converts a list of names to a set of unique values.
   Set<String> unique = names.toSet();
   Map<String, int> count = {};
 
-  for (var n in names) {
-    count[n] = (count[n] ?? 0) + 1;
+  for (var name in names) {
+    count[name] = (count[name] ?? 0) + 1;
   }
 
   print(names.length > unique.length
