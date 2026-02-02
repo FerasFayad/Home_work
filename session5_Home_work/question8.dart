@@ -4,20 +4,20 @@
  import 'dart:io';
 
 void main() {
-  //# region 1) Input
+  // #region 1) Input
   int number = getNumber();
   // #endregion
 
-  //# region 2) Convert to digits
+  // #region 2) Convert to digits
   List<int> digits = extractDigits(number);
   // #endregion
 
-  //# region 3) Operations
+  // #region 3) Operations
   int sumOfDigits = calculateSum(digits);
   int largestDigit = getMaxDigit(digits);
   // #endregion
 
-  //# region 4) Output
+  // #region 4) Output
   print("\nDigits: ${digits.join(', ')}");
   print("Sum of digits: $sumOfDigits");
   print("Largest digit: $largestDigit");
