@@ -5,13 +5,34 @@ Count how many times each name appears. Print only the names that appear more th
 void main() {
   List<String> names = ['Ali', 'Mona', 'Ali', 'Omar', 'Mona'];
 
-  Map<String, int> freq = {};
+   Map<String , int> conunterOfNames = {};
 
-  for (var name in names) {
-    freq[name] = (freq[name] ?? 0) + 1;
-  }
+   for (var name in names){
 
-  freq.entries
-      .where((e) => e.value > 1)
-      .forEach((e) => print(e.key));
+    if(conunterOfNames.containsKey(name)){
+
+    conunterOfNames[name] = conunterOfNames[name]! + 1;
+
+    }else{
+      conunterOfNames[name]=1;
+      }
+    
+    }
+
+    for(var enty in conunterOfNames.entries){
+      
+      if(enty.value >1){print(enty.key);
+      }
+   }
+   
+
+  // Map<String, int> freq = {};
+
+  // for (var name in names) {
+  //   freq[name] = (freq[name] ?? 0) + 1;
+  // }
+
+  // freq.entries
+  //     .where((e) => e.value > 1)
+  //     .forEach((e) => print(e.key));
 }

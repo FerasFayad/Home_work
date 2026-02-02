@@ -8,7 +8,7 @@ void main(){
   int sumOfScores = 0;
   for( int socre in scores){
     if (socre!=0){
-    sumOfScores = sumOfScores + socre;
+    sumOfScores += socre;
     } 
   }
       print(sumOfScores);
