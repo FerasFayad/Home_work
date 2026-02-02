@@ -17,7 +17,7 @@ void main() {
   int largestDigit = getMaxDigit(digits);
   // #endregion
 
-  //# region 1) Output
+  //# region 4) Output
   print("\nDigits: ${digits.join(', ')}");
   print("Sum of digits: $sumOfDigits");
   print("Largest digit: $largestDigit");
