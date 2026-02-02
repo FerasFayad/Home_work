@@ -27,7 +27,6 @@ String getSentence() {
 }
 
 //======================= Requirement Two ==============================//
-// حساب عدد الكلمات
 int countWords(String sentence) {
   return sentence
       .trim()                

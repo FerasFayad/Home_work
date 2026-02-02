@@ -27,29 +27,16 @@ Constraints:
 1 <= s.length <= 2 * 105
 s consists only of printable ASCII characters. */
 
-import 'dart:io';
+class Solution {
+  bool isPalindrome(String s) {
+    String cleaned = s
+        .toLowerCase()
+        .split('')
+        .where((char) => RegExp(r'[a-z0-9]').hasMatch(char))
+        .join();
 
-void main() {
-  stdout.write("Enter a phrase: ");
-  String input = stdin.readLineSync()!;
+    String reversed = cleaned.split('').reversed.join();
 
-  bool result = isPalindrome(input);
-
-  print("\nIs Palindrome? $result");
-}
-
-//======================= Core Function ===============================//
-bool isPalindrome(String s) {
-  // Step 1: تنظيف النص (حروف وأرقام فقط + lowercase)
-  String cleaned = s
-      .toLowerCase()
-      .split('')
-      .where((char) => RegExp(r'[a-z0-9]').hasMatch(char))
-      .join();
-
-  // Step 2: عكس النص
-  String reversed = cleaned.split('').reversed.join();
-
-  // Step 3: مقارنة
-  return cleaned == reversed;
+    return cleaned == reversed;
+  }
 }
