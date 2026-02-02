@@ -9,15 +9,19 @@ import 'dart:io';
 void main() {
   // #region 1) Input
   String sentence = getSentence();
+  // #endregion
 
-  // Step 2: Processing
+  // #region 2) Processing
   int wordCount = countWords(sentence);
   int charCount = countCharactersWithoutSpaces(sentence);
+  // #endregion
 
-  // Step 3: Output
+  // #region 3) Output
   print("\nSentence: \"$sentence\"");
   print("Word count: $wordCount");
   print("Character count (excluding spaces): $charCount");
+  // #endregion
+
 }
 
 //======================= Requirement One ===============================//
