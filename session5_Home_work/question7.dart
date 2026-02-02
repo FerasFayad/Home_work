@@ -7,7 +7,7 @@ Q7. Sentence Word Counter
 import 'dart:io';
 
 void main() {
-  // Step 1: Input
+  // #region 1) Input
   String sentence = getSentence();
 
   // Step 2: Processing

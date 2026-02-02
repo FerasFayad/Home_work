@@ -6,18 +6,18 @@ Q2. Odd Numbers in a Range
  import 'dart:io';
 
 void main(){
-//# region 1) Input Number
+// #region 1) Input Number
 int number = getNumber();
 //#endregion
 
-//# region 2) Odd Number
+// #region 2) Odd Number
 List<int> numbers=countOddNumbers(number);
 printOddNumbers(numbers);
 //#endregion
 
-//# region 3) Odd Numbers Were Found
+// #region 3) Odd Numbers Were Found
 print("The Count Of Odd Numbers : ${numbers.length}");
-//# endregion
+// #endregion
  }
 
  //============================= requirement 1 =============================// 
