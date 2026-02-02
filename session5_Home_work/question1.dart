@@ -31,7 +31,7 @@ void main (){
 //======================= Requirement One =================================//
 List<int> getNumbers(){
   return List.generate(3, (index){
-    stdout.write('Enter number  ${index+1}:');
+    stdout.write('Enter number  ${index+1} : ');
     return int.parse(stdin.readLineSync()!);
     
     });
