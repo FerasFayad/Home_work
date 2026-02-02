@@ -9,18 +9,19 @@ void main(){
 
   // #region 2) Rversing Word
   String reversed = reversedWord(word);
-  print('Rversed Word: $reversed');
+   print('Rversed Word: $reversed');
   //#endregion
+  
   // #region 3) How Many Vowels It Has
   int count = countVowels(word);
-  print('Vowels Count Of Enterd Word Is: $count');
+  print('Vowels Count Of Entered Word Is: $count');
   // #endregion
 
  }
  //============================= requirement 1 =============================// 
 
  String  inputWord(){
-  print("Enter Word");
+  stdout.write("Enter Word ");
   String input = stdin.readLineSync()!;
   return input;
  }

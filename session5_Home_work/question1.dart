@@ -8,12 +8,12 @@ import 'dart:io';
 void main (){
   // #region 1) Input  
     List<int> numbers =  getNumbers();
-    print("Numbers That you've Entered: ${numbers.join(' ')}");
+  print("Numbers That you've Entered: ${numbers.join(' ')}");
   // #endregion
 
   // #region 2) sum 
     int sum = calculateSum(numbers);
-    print("The Sum Of Numbers: $sum");
+  print("The Sum Of Numbers: $sum");
   // #endregion
 
   // #region 3) average
@@ -31,7 +31,7 @@ void main (){
 //======================= Requirement One =================================//
 List<int> getNumbers(){
   return List.generate(3, (index){
-    print('Enter number${index+1}:');
+    stdout.write('Enter number  ${index+1}:');
     return int.parse(stdin.readLineSync()!);
     
     });

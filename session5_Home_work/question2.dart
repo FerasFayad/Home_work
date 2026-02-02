@@ -22,7 +22,7 @@ print("The Count Of Odd Numbers : ${numbers.length}");
 
  //============================= requirement 1 =============================// 
  int getNumber(){
-  print('Enter Number');
+  stdout.write('Enter Number ');
   int number = int.parse(stdin.readLineSync()!);
   return number;
  }
