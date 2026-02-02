@@ -29,6 +29,7 @@ print("The Count Of Odd Numbers : ${numbers.length}");
   //============================= requirement 2 =============================// 
 
 void printOddNumbers(List<int> numbers){
+  print(numbers.join(' '));
   }
   //============================= requirement 3 =============================// 
 
