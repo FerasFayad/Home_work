@@ -10,7 +10,6 @@ int number = getNumber();
 
 //# region 2) Multiplication Table (Formatted)
   List<String> table = multiplicationTableFormatted(number);
-
   print("\nMultiplication Table:");
   print(table.join('\n'));
   //#endregion
