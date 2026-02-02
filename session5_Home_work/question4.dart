@@ -23,7 +23,7 @@ void main(){
   //endredion
 
   // #region 3) Calculate The Difference Between Them
-   int? differenceBetweenTowNumbers = calculateTheDifference(largestNumber, smallesNumber);
+   int differenceBetweenTowNumbers = calculateTheDifference(largestNumber, smallesNumber);
    print('The Difference Between Them: $differenceBetweenTowNumbers');
   //endredion
 
@@ -48,7 +48,7 @@ int getMinNumber(List<int> numbers){
   return numbers.reduce((number1 , number2)=> number1<number2 ? number1:number2);
 }
 //======================= Requirement Four =================================//
-int? calculateTheDifference(int largestNumber , int smallesNumber){
+int calculateTheDifference(int largestNumber , int smallesNumber){
   return largestNumber - smallesNumber;
 
 }
