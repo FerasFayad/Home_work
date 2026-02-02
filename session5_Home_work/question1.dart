@@ -38,15 +38,16 @@ List<int> getNumbers(){
 }
 //======================= Requirement Tow =================================//
 int calculateSum(List<int> numbers){
-  return numbers.fold(0, (sum , index)=>sum+index);
+  return numbers.fold(0, (total , current)=>total+current);
 }
 //======================= Requirment Three =================================//
 double calculateAverage (int sum , int count) { 
+ if (count == 0) return 0;
   return sum/count;
 }
 //======================== Requirment Four ================================//
 bool checkAverage(double ave){
-  return ave>= 50;
+  return ave>50;
 }
 
 
