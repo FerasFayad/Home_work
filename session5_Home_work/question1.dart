@@ -8,22 +8,22 @@ import 'dart:io';
 void main (){
   // #region 1) Input  
     List<int> numbers =  getNumbers();
-    print(numbers);
+    print("Numbers That you've Entered: ${numbers.join(' ')}");
   // #endregion
 
   // #region 2) sum 
     int sum = calculateSum(numbers);
-    print("$sum");
+    print("The Sum Of Numbers: $sum");
   // #endregion
 
   // #region 3) average
   double ave = calculateAverage(sum, numbers.length);
-  print("$ave");
+  print("The Average Of Numbers: $ave");
   // #endregion
 
   // # region 4) check average is greater than 50 or not
   bool check = checkAverage(ave);
-  print("$check");
+  print("is an average greater than 50: $check");
   // # endregion
 
 }
