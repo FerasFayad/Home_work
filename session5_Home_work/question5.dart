@@ -4,20 +4,20 @@
  import 'dart:io';
 
 void main(){
-//# region 1) Input Number
+//  #region 1) Input Number
 int number = getNumber();
-//#endregion
+// #endregion
 
-//# region 2) Multiplication Table (Formatted)
+// #region 2) Multiplication Table (Formatted)
   List<String> table = multiplicationTableFormatted(number);
   print("\nMultiplication Table:");
   print(table.join('\n'));
-  //#endregion
+// #endregion
 
-//# region 3) Sum
+// #region 3) Sum
   int sum = calculateSumFromTable(number);
   print("\nThe Sum Of Results: $sum");
-  //#endregion
+// #endregion
 
  }
 
