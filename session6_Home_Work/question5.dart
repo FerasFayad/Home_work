@@ -4,15 +4,16 @@
  */
 import 'dart:io';
 
-void main(){
-List<int> numbers = getNumbers();
-print(numbers);
-List<int> maxAndSceoundMaxNumbers = getLargestSecondNumber(numbers);
-maxAndSceoundMaxNumbers.forEach(print);
+void main() {
+  List<int> numbers = getNumbers();
+  print(numbers);
+  List<int> maxAndSceoundMaxNumbers = getLargestSecondNumber(numbers);
+  maxAndSceoundMaxNumbers.forEach(print);
 }
-List<int> getNumbers(){
-  return List.generate(6, (index){
-    stdout.write('Enter number ${index +1} :');
+
+List<int> getNumbers() {
+  return List.generate(6, (index) {
+    stdout.write('Enter number ${index + 1} :');
     return int.parse(stdin.readLineSync()!);
   });
 }

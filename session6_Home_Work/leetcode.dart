@@ -39,11 +39,8 @@ Constraints:
 
 class Solution {
   bool containsDuplicate(List<int> nums) {
-
     var uniqeNumber = nums.toSet();
-    
-    return nums.length > uniqeNumber.length;
 
-    }
-    
+    return nums.length > uniqeNumber.length;
   }
+}
