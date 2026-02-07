@@ -42,7 +42,7 @@ class Solution {
 
     var uniqeNumber = nums.toSet();
     
-    return nums.length > uniqeNumber.length ? true : false;
+    return nums.length > uniqeNumber.length;
 
     }
     
