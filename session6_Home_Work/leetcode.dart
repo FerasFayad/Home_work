@@ -37,8 +37,13 @@ Constraints:
 -109 <= nums[i] <= 109
  */
 
-// class Solution {
-//   bool containsDuplicate(List<int> nums) {
+class Solution {
+  bool containsDuplicate(List<int> nums) {
+
+    var uniqeNumber = nums.toSet();
     
-//   }
-// }
+    return nums.length > uniqeNumber.length ? true : false;
+
+    }
+    
+  }

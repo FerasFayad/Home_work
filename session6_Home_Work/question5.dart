@@ -5,7 +5,10 @@
 import 'dart:io';
 
 void main(){
-
+List<int> numbers = getNumbers();
+print(numbers);
+int largestNumber = getLargestSecoundNumber(numbers);
+print(largestNumber);
 }
 List<int> getNumbers(){
   return List.generate(6, (index){
@@ -14,13 +17,8 @@ List<int> getNumbers(){
   });
 }
 
-// List<int> getLargestSecoundNumber (List<int> numbers){
-//   return  numbers.reduce((a ,b)
-//   {
-//     if (a >= b) {
-//       return a;
-//     } else {
-//       return b;
-//     }
-//   });
-// }
+int getLargestSecoundNumber (List<int> numbers){
+  return  numbers.reduce((number1 ,number2){
+    return number1 >=number2 ? number1:number2;
+    });
+}
