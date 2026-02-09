@@ -8,7 +8,8 @@ void main() {
   List<int> numbers = getNumbers();
   print(numbers);
   List<int> maxAndSceoundMaxNumbers = getLargestSecondNumber(numbers);
-  maxAndSceoundMaxNumbers.forEach(print);
+  print('The Largest Number : ${maxAndSceoundMaxNumbers[0]}');
+  print('The Second Largest Number : ${maxAndSceoundMaxNumbers[1]}');
 }
 
 List<int> getNumbers() {
@@ -17,13 +18,6 @@ List<int> getNumbers() {
     return int.parse(stdin.readLineSync()!);
   });
 }
-
-//[2,3,1,5,2,6]
-//prev = 2 3 3 5 5 6
-//curr = 3 1 5 2 6
-
-//prev = return Max number 3 3 5 5 6
-//curr = 1 secound Max number
 
 List<int> getLargestSecondNumber(List<int> numbers) {
   if (numbers.length < 2) {
