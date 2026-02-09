@@ -6,21 +6,38 @@ Ask the user for a number (e.g., 9875).
  */
 import 'dart:io';
 
-void main() {}
-String inputNumber() {
-  String? input;
-  while (true) {
-    if (input == null) break;
+void main() {
+  String number = inputNumber();
+  List<String> numbers = splitNumber(number);
 
-    try {
-      input = stdin.readLineSync()!;
-    } catch (e) {
-      print(e);
-    }
-  }
-  return input!;
+  int result = calculateDigits(numbers);
+
+  print('Final single-digit result: $result');
+}
+
+String inputNumber() {
+  stdout.write('Enter Number : ');
+  return stdin.readLineSync()!;
 }
 
 List<String> splitNumber(String number) {
-  return number.trim().split(RegExp(r'/s+'));
+  return number.split('');
+}
+
+int calculateDigits(List<String> numbers) {
+  int sum = 0;
+
+  while (numbers.length > 1) {
+    sum = 0;
+
+    for (var number in numbers) {
+      sum += int.parse(number);
+      print(numbers);
+    }
+
+    // نعيد بناء القائمة من جديد
+    numbers = splitNumber(sum.toString());
+  }
+
+  return int.parse(numbers.first);
 }
