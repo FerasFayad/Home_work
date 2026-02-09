@@ -13,7 +13,5 @@ class NumberCheck {
 
   NumberCheck(this.number);
 
-  bool isEven() {
-    return this.number.isEven;
-  }
+  bool isEven() => number.isEven;
 }
