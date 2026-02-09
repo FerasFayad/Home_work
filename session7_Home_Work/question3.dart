@@ -12,7 +12,6 @@ void main() {
 
   print(movies['john_wick']!.rating);
 
-  // طباعة الأفلام اللي تقييمها فوق 7
   movies.forEach((key, movie) {
     if (movie.rating > 7) {
       print(movie.title);
