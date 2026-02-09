@@ -24,9 +24,24 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 
-
+*/
 class Solution {
   int maxProfit(List<int> prices) {
-    
+    int minPrice = prices[0];
+    int maxProfit = 0;
+
+    for (int i = 1; i < prices.length; i++) {
+      int profit = prices[i] - minPrice;
+
+      if (profit > maxProfit) {
+        maxProfit = profit;
+      }
+
+      if (prices[i] < minPrice) {
+        minPrice = prices[i];
+      }
+    }
+
+    return maxProfit;
   }
-} */
+}
