@@ -16,8 +16,20 @@ void main() {
 }
 
 String inputNumber() {
-  stdout.write('Enter Number : ');
-  return stdin.readLineSync()!;
+  while (true) {
+    stdout.write('Enter Number : ');
+
+    String? input = stdin.readLineSync();
+
+    if (input == null || input.isEmpty) {
+      print('❌ Please enter a value.');
+      continue;
+    } else if (!RegExp(r'^\d+$').hasMatch(input)) {
+      print('❌ Numbers only! Try again.');
+      continue;
+    }
+    return input;
+  }
 }
 
 List<String> splitNumber(String number) {
@@ -32,7 +44,6 @@ int calculateDigits(List<String> numbers) {
 
     for (var number in numbers) {
       sum += int.parse(number);
-      print(numbers);
     }
 
     numbers = splitNumber(sum.toString());
