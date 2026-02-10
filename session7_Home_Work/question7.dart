@@ -35,7 +35,6 @@ int calculateDigits(List<String> numbers) {
       print(numbers);
     }
 
-    // نعيد بناء القائمة من جديد
     numbers = splitNumber(sum.toString());
   }
 
