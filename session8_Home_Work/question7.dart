@@ -11,8 +11,7 @@ import 'dart:io';
 
 void main(List<String> args) {
   List<int> input = inputNumbers();
-  input.forEach(action)
-    print(input);
+  print(input);
 }
 
 List<int> inputNumbers() {

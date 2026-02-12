@@ -1,0 +1,14 @@
+{
+  "roots": [
+    "session8_Home_Work"
+  ],
+  "packages": [
+    {
+      "name": "session8_Home_Work",
+      "version": "1.0.0",
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "configVersion": 1
+}
