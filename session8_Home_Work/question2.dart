@@ -19,9 +19,9 @@ class Car {
   int _year = 0;
 
   set brand(String brand) =>
-      brand.isEmpty ? print('Invalid Value') : _brand = brand;
+      brand.isNotEmpty ? _brand = brand : print('Invalid Value');
 
-  set year(int year) => year < 1886 ? print('Invalid Value') : _year = year;
+  set year(int year) => year > 1886 ? _year = year : print('Invalid Value');
 
   String get brand => _brand;
   int get year => _year;
