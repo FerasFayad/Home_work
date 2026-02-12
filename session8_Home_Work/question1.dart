@@ -23,11 +23,6 @@ class BankAccount {
 
   double get balance => _balance;
 
-  set balance(double value) {
-    if (value < 0) {
-      print('Invalid balance');
-    } else {
-      _balance = value;
-    }
-  }
+  set balance(double value) =>
+      value < 0 ? print('Invalid balance') : _balance = value;
 }
