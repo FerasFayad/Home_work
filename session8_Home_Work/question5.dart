@@ -4,3 +4,9 @@ Create a class Book with private fields _title and _pages.
 - Add a getter title and a computed getter readingTime that assumes 2 minutes per page.
 - In main(), create a book, print its title and estimated reading time.
  */
+void main() {}
+
+class Book {
+  String _title = '';
+  int _pages = 0;
+}
