@@ -10,3 +10,32 @@ An input string is valid if:
 - '([)]' → Invalid - '{[]}' → Valid
 
 */
+bool isValid(String s) {
+  List<String> stack = [];
+
+  Map<String, String> pairs = {
+    ')': '(',
+    '}': '{',
+    ']': '[',
+  };
+
+  for (int i = 0; i < s.length; i++) {
+    String ch = s[i];
+
+    if (ch == '(' || ch == '{' || ch == '[') {
+      stack.add(ch);
+    } else if (pairs.containsKey(ch)) {
+      if (stack.isEmpty) {
+        return false;
+      }
+
+      String last = stack.removeLast();
+
+      if (last != pairs[ch]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.isEmpty;
+}
