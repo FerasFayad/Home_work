@@ -19,6 +19,10 @@ void main() {
   int smallesNumber = getSmallestNumber(numbers: numbers);
   print('The smallest Number Is : $smallesNumber');
   print('=======================================================');
+  //✅ Added: difference between largest and smallest
+  int difference = largestNumber - smallesNumber;
+  print('Difference Is : $difference');
+  print('=======================================================');
   double ave = getAverage(numbers: numbers);
   print('Average : $ave');
   print('=======================================================');
@@ -34,15 +38,24 @@ void main() {
   print('=======================================================');
 }
 
-// List<int> inputNumbers() {
-//   stdout.write('Enter Number : ');
-//   String input = stdin.readLineSync()!;
-//   return input.split('').map((element) => int.parse(element)).toList();
-// }
-
 List<int> inputNumbers() => List.generate(6, (number) {
-      stdout.write('Enter Number ${number + 1} : ');
-      return int.parse(stdin.readLineSync()!);
+      while (true) {
+        stdout.write('Enter Number ${number + 1} : ');
+        String? input = stdin.readLineSync();
+
+        if (input == null || input.trim().isEmpty) {
+          print('Invalid input, please enter a number.');
+          continue;
+        }
+
+        int? value = int.tryParse(input);
+        if (value == null) {
+          print('Invalid input, please enter a valid integer.');
+          continue;
+        }
+
+        return value;
+      }
     });
 
 int getLargestNumber({required List<int> numbers}) => numbers
