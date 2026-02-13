@@ -1,15 +1,15 @@
 import 'dart:io';
 
 void main() {
-  List<int> numbers = inputNumbers();
+  List<int> numbers = inputNumbers(count: 6);
 
   while (true) {
     print('=======================================================');
     print('You List Of Numbers $numbers');
     print('=======================================================');
-    print('[1] Get Largest Numbers');
+    print('[1] Get Largest Number');
     print('*******************************************************');
-    print('[2] Get smallest Numbers');
+    print('[2] Get Smallest Number');
     print('*******************************************************');
     print('[3] Average');
     print('*******************************************************');
@@ -19,27 +19,42 @@ void main() {
     print('*******************************************************');
     print('[6] Odd Numbers');
     print('*******************************************************');
-    print('[7] Exit');
-    stdout.write('choise Form The List : ');
-    int choice = int.parse(stdin.readLineSync()!);
+    print('[7] Difference (Largest - Smallest)');
+    print('*******************************************************');
+    print('[8] Even Count');
+    print('*******************************************************');
+    print('[9] Odd Count');
+    print('*******************************************************');
+    print('[10] Summary (Q7 Full Output)');
+    print('*******************************************************');
+    print('[11] Re-enter Numbers');
+    print('*******************************************************');
+    print('[0] Exit');
+
+    int choice = readInt('choise Form The List : ');
+
+    // نحسب الأشياء المشتركة مرة وحدة لكل اختيار (بدون تكرار كبير)
+    int largestNumber = getLargestNumber(numbers: numbers);
+    int smallestNumber = getSmallestNumber(numbers: numbers);
+    double ave = getAverage(numbers: numbers);
+
     switch (choice) {
       case 1:
-        int largestNumber = getLargestNumber(numbers: numbers);
         print('The Latget Number Is : $largestNumber');
         print('=======================================================');
         break;
+
       case 2:
-        int smallesNumber = getSmallestNumber(numbers: numbers);
-        print('The smallest Number Is : $smallesNumber');
+        print('The smallest Number Is : $smallestNumber');
         print('=======================================================');
         break;
+
       case 3:
-        double ave = getAverage(numbers: numbers);
         print('Average : $ave');
         print('=======================================================');
         break;
+
       case 4:
-        double ave = getAverage(numbers: numbers);
         print('Average : $ave');
         print('=======================================================');
         List<int> aboveAverage =
@@ -47,35 +62,95 @@ void main() {
         print('Numbers Above Average Are : $aboveAverage');
         print('=======================================================');
         break;
+
       case 5:
-        Set<int> eveNumbers = getEvenNumbers(numbers: numbers);
-        print('Even Numbers are : $eveNumbers');
+        List<int> evenNumbers = getEvenNumbers(numbers: numbers);
+        print('Even Numbers are : $evenNumbers');
         print('=======================================================');
         break;
+
       case 6:
-        Set<int> oddNumbers = getOddNumbers(numbers: numbers);
+        List<int> oddNumbers = getOddNumbers(numbers: numbers);
         print('Odd Numbers are : $oddNumbers');
         print('=======================================================');
         break;
+
       case 7:
-        return;
-      default:
-        print('Thank You');
+        int difference = largestNumber - smallestNumber;
+        print('Largest Number Is : $largestNumber');
+        print('Smallest Number Is : $smallestNumber');
+        print('Difference Is : $difference');
         print('=======================================================');
+        break;
+
+      case 8:
+        int evenCount = countEvenNumbers(numbers: numbers);
+        print('Even Count Is : $evenCount');
+        print('=======================================================');
+        break;
+
+      case 9:
+        int oddCount = countOddNumbers(numbers: numbers);
+        print('Odd Count Is : $oddCount');
+        print('=======================================================');
+        break;
+
+      case 10:
+        int difference = largestNumber - smallestNumber;
+        List<int> aboveAverage =
+            getNumbersAboveAverage(numbers: numbers, average: ave);
+        int evenCount = countEvenNumbers(numbers: numbers);
+        int oddCount = countOddNumbers(numbers: numbers);
+
+        print('The Latget Number Is : $largestNumber');
+        print('The smallest Number Is : $smallestNumber');
+        print('Difference Is : $difference');
+        print('Average : $ave');
+        print('Numbers Above Average Are : $aboveAverage');
+        print('Even Count Is : $evenCount');
+        print('Odd Count Is : $oddCount');
+        print('=======================================================');
+        break;
+
+      case 11:
+        numbers = inputNumbers(count: 6);
+        print('Numbers Updated ✅');
+        print('=======================================================');
+        break;
+
+      case 0:
         return;
+
+      default:
+        print('Invalid choice, try again.');
+        print('=======================================================');
+        break;
     }
   }
 }
 
-// List<int> inputNumbers() {
-//   stdout.write('Enter Number : ');
-//   String input = stdin.readLineSync()!;
-//   return input.split('').map((element) => int.parse(element)).toList();
-// }
+int readInt(String message) {
+  while (true) {
+    stdout.write(message);
+    String? input = stdin.readLineSync();
 
-List<int> inputNumbers() => List.generate(6, (number) {
-      stdout.write('Enter Number ${number + 1} : ');
-      return int.parse(stdin.readLineSync()!);
+    if (input == null || input.trim().isEmpty) {
+      print('Invalid input, please enter a number.');
+      continue;
+    }
+
+    int? value = int.tryParse(input.trim());
+    if (value == null) {
+      print('Invalid input, please enter a valid integer.');
+      continue;
+    }
+
+    return value;
+  }
+}
+
+List<int> inputNumbers({required int count}) => List.generate(count, (number) {
+      return readInt('Enter Number ${number + 1} : ');
     });
 
 int getLargestNumber({required List<int> numbers}) => numbers
@@ -93,11 +168,14 @@ List<int> getNumbersAboveAverage(
         {required List<int> numbers, required double average}) =>
     numbers.where((element) => element > average).toList();
 
-Set<int> getEvenNumbers({required List<int> numbers}) =>
-    numbers.where((number) => number.isEven).toSet();
+List<int> getEvenNumbers({required List<int> numbers}) =>
+    numbers.where((number) => number.isEven).toList();
 
-Set<int> getOddNumbers({required List<int> numbers}) =>
-    numbers.where((number) => number.isOdd).toSet();
+List<int> getOddNumbers({required List<int> numbers}) =>
+    numbers.where((number) => number.isOdd).toList();
 
-// int averageTest({required List<int> numbers}) =>
-//     numbers.reduce((num1, num2) => ((num1 + num2) / numbers.length).toInt());
+int countEvenNumbers({required List<int> numbers}) =>
+    numbers.where((n) => n.isEven).length;
+
+int countOddNumbers({required List<int> numbers}) =>
+    numbers.where((n) => n.isOdd).length;
