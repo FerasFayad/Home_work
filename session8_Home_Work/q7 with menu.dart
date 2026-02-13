@@ -33,7 +33,6 @@ void main() {
 
     int choice = readInt('choise Form The List : ');
 
-    // نحسب الأشياء المشتركة مرة وحدة لكل اختيار (بدون تكرار كبير)
     int largestNumber = getLargestNumber(numbers: numbers);
     int smallestNumber = getSmallestNumber(numbers: numbers);
     double ave = getAverage(numbers: numbers);
