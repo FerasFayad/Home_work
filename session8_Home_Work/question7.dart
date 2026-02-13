@@ -1,63 +1,63 @@
-/*
-Q7
-Ask the user to input a list of integers.
-- Print the largest number, the smallest number, and their difference.
-- Calculate the average of the list.
-- Print all numbers that are above the average.
-- Finally, print how many numbers are even and how many are odd in the list.
-*/
-
 import 'dart:io';
 
 void main() {
-  List<int> numbers = inputNumbers();
+  int count = 8;
+  List<int> numbers = inputNumbers(count);
   print(numbers);
-  print('=======================================================');
+  line();
 
   int largestNumber = getLargestNumber(numbers: numbers);
   print('The Latget Number Is : $largestNumber');
-  print('=======================================================');
+  line();
 
   int smallesNumber = getSmallestNumber(numbers: numbers);
   print('The smallest Number Is : $smallesNumber');
-  print('=======================================================');
+  line();
 
   int difference = largestNumber - smallesNumber;
   print('Difference Is : $difference');
-  print('=======================================================');
+  line();
 
   double ave = getAverage(numbers: numbers);
   print('Average : $ave');
-  print('=======================================================');
+  line();
 
   List<int> aboveAverage =
       getNumbersAboveAverage(numbers: numbers, average: ave);
   print('Number Above Average : $aboveAverage');
-  print('=======================================================');
+  line();
 
   List<int> eveNumbers = getEvenNumbers(numbers: numbers);
   print('Even Numbers are : $eveNumbers');
   print('Even Count Is : ${eveNumbers.length}');
-  print('=======================================================');
+  line();
 
-  print('=======================================================');
   List<int> oddNumbers = getOddNumbers(numbers: numbers);
   print('Odd Numbers are : $oddNumbers');
   print('Odd Count Is : ${oddNumbers.length}');
-  print('=======================================================');
-
-  print('=======================================================');
+  line();
 }
 
-// List<int> inputNumbers() {
-//   stdout.write('Enter Number : ');
-//   String input = stdin.readLineSync()!;
-//   return input.split('').map((element) => int.parse(element)).toList();
-// }
+void line() => print('=======================================================');
 
-List<int> inputNumbers() => List.generate(6, (number) {
-      stdout.write('Enter Number ${number + 1} : ');
-      return int.parse(stdin.readLineSync()!);
+List<int> inputNumbers(int count) => List.generate(count, (number) {
+      while (true) {
+        stdout.write('Enter Number ${number + 1} : ');
+        String? input = stdin.readLineSync();
+
+        if (input == null || input.trim().isEmpty) {
+          print('Invalid input, please enter a number.');
+          continue;
+        }
+
+        int? value = int.tryParse(input);
+        if (value == null) {
+          print('Invalid input, please enter a valid integer.');
+          continue;
+        }
+
+        return value;
+      }
     });
 
 int getLargestNumber({required List<int> numbers}) => numbers
