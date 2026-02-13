@@ -33,8 +33,12 @@ void main() {
   List<int> eveNumbers = getEvenNumbers(numbers: numbers);
   print('Even Numbers are : $eveNumbers');
   print('=======================================================');
+  print('Even Count Is : ${eveNumbers.length}');
+  print('=======================================================');
   List<int> oddNumbers = getOddNumbers(numbers: numbers);
   print('Odd Numbers are : $oddNumbers');
+  print('=======================================================');
+  print('Odd Count Is : ${oddNumbers.length}');
   print('=======================================================');
 }
 
