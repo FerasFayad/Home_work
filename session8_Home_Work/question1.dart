@@ -6,6 +6,7 @@ Create a class BankAccount with a private field _balance.
  */
 void main() {
   BankAccount account = BankAccount(500);
+  print(account.balance);
 
   account.balance = 700;
   print(account.balance);
