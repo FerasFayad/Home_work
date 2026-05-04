@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../data/model/model.dart';
 import '../../logic/weather_logic.dart';
 import '../widgets/no_weather_widget.dart';
