@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wather_app/features/wather/presentation/widgets/weather_error_Widget.dart';
 import 'package:wather_app/features/wather/presentation/widgets/weather_loading_widget.dart';
-
 import '../../data/model/model.dart';
 import 'weather_content_widget.dart';
 import 'weather_no_data_widget.dart';
