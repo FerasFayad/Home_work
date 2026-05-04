@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wather_app/features/home/presentation/home_screen/home_screen.dart';
 import 'package:wather_app/features/wather/presentation/weather_screen/weather_screen.dart';
 
 void main() {

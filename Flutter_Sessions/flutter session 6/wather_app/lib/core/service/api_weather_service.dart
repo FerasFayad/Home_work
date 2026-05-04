@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../../features/wather/model/model.dart';
+import '../../features/wather/data/model/model.dart';
 
 class WeatherService {
   final Dio dio = Dio();
