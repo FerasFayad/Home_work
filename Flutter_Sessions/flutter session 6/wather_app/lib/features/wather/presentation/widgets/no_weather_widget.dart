@@ -24,7 +24,7 @@ class NoWeatherWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: Text(
-            'There is no weather 😞\nStart searching now 🔍',
+            'There is no weather 😞 Start searching now 🔍',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 35,

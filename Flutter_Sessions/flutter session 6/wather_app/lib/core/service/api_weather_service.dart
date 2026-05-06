@@ -14,6 +14,7 @@ class WeatherService {
         queryParameters: {
           'key': apiKey,
           'q': cityName,
+          'days': 1,
         },
       );
 
