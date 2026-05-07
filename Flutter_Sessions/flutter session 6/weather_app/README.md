@@ -15,6 +15,7 @@ This project is a Flutter practice application built around a real weather API i
 - Manage loading, error, empty, and success UI states.
 - Separate UI, logic, model, and service responsibilities.
 
+<<<<<<< HEAD
 ## Features
 
 - Search weather by city name.
@@ -102,3 +103,5 @@ This project applies several clean code concepts:
 - Reduced responsibilities inside `WeatherScreen`
 
 ---
+=======
+قث
