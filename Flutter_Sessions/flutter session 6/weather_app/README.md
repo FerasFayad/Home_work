@@ -104,4 +104,3 @@ This project applies several clean code concepts:
 
 ---
 =======
-قث
